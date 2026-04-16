@@ -1,0 +1,14 @@
+/*Estilos generales*/
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #dbdbdb;
+}
+
+/*Colores*/
+:root {
+  --nebrija-color: #c2002f;
+  --secondary-color: #ff8c8c;
+  --grey-color: #e5e5e5;
+}
