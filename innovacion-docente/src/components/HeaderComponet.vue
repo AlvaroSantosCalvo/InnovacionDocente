@@ -8,19 +8,61 @@ import { RouterLink, RouterView } from 'vue-router';
     <nav class="nav">
       <img class="logo" src="/src/assets/logo.png" alt="logo">
       <div class="nav-links">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/formacion">Formación</RouterLink>
-        <RouterLink to="/proyectos">Proyectos</RouterLink>
-        <RouterLink to="/eventos">Eventos</RouterLink>
-        <RouterLink to="/convocatorias">Convocatorias</RouterLink>
-        <RouterLink to="/buenas-practicas">Buenas Prácticas</RouterLink>
+        <RouterLink class="btn-nav" to="/">Inicio</RouterLink>
+        <RouterLink class="btn-nav" to="/formacion">Formación</RouterLink>
+        <RouterLink class="btn-nav" to="/proyectos">Proyectos</RouterLink>
+        <RouterLink class="btn-nav" to="/eventos">Eventos</RouterLink>
+        <RouterLink class="btn-nav" to="/convocatorias">Convocatorias</RouterLink>
+        <RouterLink class="btn-nav" to="/buenas-practicas">Buenas Prácticas</RouterLink>
       </div>
-      <div class="nav-profile"><button>+</button></div>
+      <div class="nav-profile"><button>o</button></div>
     </nav>
     <RouterView />
   </header>
 </template>
 
 <style scoped>
-
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--grey-color);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    height: 60px;
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+.btn-nav {
+  background-color: var(--nebrija-color);
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+}
+.btn-nav:hover {
+  background-color: white;
+  color: var(--nebrija-color);
+  border: 1px solid var(--nebrija-color);
+}
+.nav-profile button {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: var(--nebrija-color);
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: 1px solid var(--nebrija-color);
+  border-radius: 50%;
+}
+.nav-profile button:hover {
+  background-color: var(--nebrija-color);
+  color: white;
+}
 </style>
