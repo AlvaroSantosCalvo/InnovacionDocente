@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { Proyect } from '../stores/proyectoStore'
-import proyectsData from '../data/proyects.json'
+import ProjectCard from '@/components/ProjectCard.vue';
 
-const proyects = ref<Proyect[]>(proyectsData)
+
 </script>
 
 <template>
@@ -15,7 +13,7 @@ const proyects = ref<Proyect[]>(proyectsData)
     <section class="presentation">
       <h2 class="title">Presentación</h2>
       <div class="presentation-container">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro voluptates dignissimos, provident nisi qui
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Poro voluptates dignissimos, provident nisi qui
           ipsam aspernatur maiores earum doloribus, repellat id corrupti recusandae et culpa necessitatibus officiis
           sit, laudantium quisquam!</p>
       </div>
@@ -23,20 +21,7 @@ const proyects = ref<Proyect[]>(proyectsData)
     <section class="sections">
       <section class="proyects-section">
         <h3 class="sub-title">Proyectos</h3>
-        <div class="proyect-slider">
-          <article v-for="proyect in proyects" :key="proyect.id" class="proyect-card">
-            <div class="proyect-image" v-if="proyect.imgUrl">
-              <img :src="proyect.imgUrl" :alt="proyect.title" />
-            </div>
-            <div class="proyect-image placeholder" v-else>
-              Sin imagen disponible
-            </div>
-            <div class="proyect-content">
-              <h4 class="proyect-title">{{ proyect.title }}</h4>
-              <p class="proyect-description">{{ proyect.description }}</p>
-            </div>
-          </article>
-        </div>
+        <ProjectCard />
         <button class="more-btn">Más proyectos -></button>
       </section>
       <section class="calls-section">
@@ -91,6 +76,7 @@ const proyects = ref<Proyect[]>(proyectsData)
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s;
+  margin: 15px;
 }
 
 .more-btn:hover {
@@ -110,8 +96,9 @@ const proyects = ref<Proyect[]>(proyectsData)
   text-align: center;
   color: white;
   padding: 4rem 2rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/banner.jpg') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../assets/banner.jpg') no-repeat center center;
   background-size: cover;
+  /* height: 100px; */
 }
 
 .page-title {
@@ -150,63 +137,6 @@ const proyects = ref<Proyect[]>(proyectsData)
 /* Sección Proyectos */
 .proyects-section {
   padding: 2rem;
-}
-
-.proyect-slider {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  margin-top: 1rem;
-}
-
-.proyect-card {
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 1rem;
-  background: #fff;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.proyect-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.proyect-image {
-  width: auto;
-  height: 150px;
-  border-radius: 0.8rem;
-  overflow: hidden;
-  background: #f4f4f4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  color: #666;
-  font-size: 0.95rem;
-  text-align: center;
-  padding: 0.75rem;
-}
-
-.proyect-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.proyect-title {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.proyect-description {
-  margin: 0;
-  color: #444;
-  font-size: 0.95rem;
-  line-height: 1.5;
 }
 
 /* Sección Convocatorias */
@@ -258,12 +188,19 @@ const proyects = ref<Proyect[]>(proyectsData)
   gap: 1rem;
 }
 
-.contact-form input,
+.contact-form input{
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
 .contact-form textarea {
   padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   font-size: 1rem;
+  height: 75px;
 }
 
 .contact-form button {
