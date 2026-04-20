@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from 'vue-router';
 <template>
   <header>
     <nav class="nav">
-      <img class="logo" src="/src/assets/logo.png" alt="logo">
+      <img class="logo" src="/src/assets/logo.jpg" alt="logo">
       <div class="nav-links">
         <RouterLink class="btn-nav" to="/">Inicio</RouterLink>
         <RouterLink class="btn-nav" to="/formacion">Formación</RouterLink>
