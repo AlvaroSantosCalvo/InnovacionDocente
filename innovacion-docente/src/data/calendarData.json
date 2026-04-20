@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Convocatoria proyectos I+D",
+        "start": "2026-04-05",
+        "end": "2026-04-05",
+        "color": "blue",
+        "allDay": true
+    },
+    {
+        "name": "Taller metodologías activas",
+        "start": "2026-04-10",
+        "end": "2026-04-10",
+        "color": "green",
+        "allDay": true
+    },
+    {
+        "name": "Jornada innovación educativa",
+        "start": "2026-04-15",
+        "end": "2026-04-16",
+        "color": "orange",
+        "allDay": true
+    },
+    {
+        "name": "Plazo solicitud becas docentes",
+        "start": "2026-04-22",
+        "end": "2026-04-22",
+        "color": "red",
+        "allDay": true
+    }
+]

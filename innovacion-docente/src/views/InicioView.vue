@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import ProjectCard from '@/components/ProjectCard.vue';
-
-
+import CalendarComponent from '@/components/CalendarComponent.vue';
 </script>
 
 <template>
@@ -26,7 +25,7 @@ import ProjectCard from '@/components/ProjectCard.vue';
       </section>
       <section class="calls-section">
         <h3 class="sub-title">Convocatorias</h3>
-        <div class="calendar"></div>
+        <CalendarComponent />
       </section>
       <section class="events-section">
         <h3 class="sub-title">Eventos</h3>
@@ -145,16 +144,10 @@ import ProjectCard from '@/components/ProjectCard.vue';
   background-color: #e9ecef;
 }
 
-.calendar {
-  /* Placeholder para calendario */
-  height: 200px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+.calls-section :deep(.v-calendar) {
   border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
+  overflow: hidden;
+  border: 1px solid #ddd;
 }
 
 /* Sección Eventos */
