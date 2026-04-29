@@ -4,27 +4,31 @@
         "start": "2026-04-05",
         "end": "2026-04-05",
         "color": "blue",
-        "allDay": true
+        "allDay": true,
+        "description": "Apertura del plazo para la presentación de nuevos proyectos de Investigación y Desarrollo para el próximo semestre."
     },
     {
         "name": "Taller metodologías activas",
         "start": "2026-04-10",
         "end": "2026-04-10",
         "color": "green",
-        "allDay": true
+        "allDay": true,
+        "description": "Sesión práctica sobre la implementación de metodologías activas en el aula (ABP, Flipped Classroom, etc.)."
     },
     {
         "name": "Jornada innovación educativa",
         "start": "2026-04-15",
         "end": "2026-04-16",
         "color": "orange",
-        "allDay": true
+        "allDay": true,
+        "description": "Evento anual donde se comparten las mejores prácticas y proyectos de innovación docente del centro."
     },
     {
         "name": "Plazo solicitud becas docentes",
         "start": "2026-04-22",
         "end": "2026-04-22",
         "color": "red",
-        "allDay": true
+        "allDay": true,
+        "description": "Último día para solicitar las becas de movilidad y formación para el personal docente."
     }
 ]
