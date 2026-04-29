@@ -141,13 +141,14 @@ import CalendarComponent from '@/components/CalendarComponent.vue';
 /* Sección Convocatorias */
 .calls-section {
   padding: 2rem;
-  background-color: #e9ecef;
+  background-color: #ffffff;
 }
 
 .calls-section :deep(.v-calendar) {
   border-radius: 0.5rem;
   overflow: hidden;
   border: 1px solid #ddd;
+  background-color: #ffffff;
 }
 
 /* Sección Eventos */
