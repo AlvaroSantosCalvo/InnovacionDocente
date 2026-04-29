@@ -37,14 +37,14 @@ import CalendarComponent from '@/components/CalendarComponent.vue';
       <h2 class="title">Contacta con nosotros</h2>
       <form action="">
         <p>Envíanos un mensaje y nos pondremos en contacto contigo lo antes posible.</p>
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <textarea name="message" id="" placeholder="Tu mensaje..." required></textarea>
+        <input class="form-input" type="text" placeholder="Nombre" required>
+        <input class="form-input" type="email" placeholder="Correo electrónico" required>
+        <textarea class="form-textarea" name="message" id="" placeholder="Tu mensaje..." required></textarea>
         <label for="terms">
-          <input type="checkbox" id="terms" required>
+          <input class="form-checkbox" type="checkbox" id="terms" required>
           Acepto los términos y condiciones
         </label>
-        <button type="submit">Enviar</button>
+        <button class="form-button" type="submit">Enviar</button>
       </form>
     </section>
   </main>
@@ -181,22 +181,48 @@ import CalendarComponent from '@/components/CalendarComponent.vue';
   gap: 1rem;
 }
 
-.contact-form input{
+.form-input {
   padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   font-size: 1rem;
+  background-color: white;
 }
 
-.contact-form textarea {
+.form-textarea {
   padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   font-size: 1rem;
   height: 75px;
+  background-color: white;
 }
 
-.contact-form button {
+.form-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #9c9c9c;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 9999px;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.form-checkbox:checked {
+  background-color: var(--nebrija-color);
+  border-color: var(--nebrija-color);
+  border: 1px solid #9c9c9c;
+}
+
+.form-checkbox:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.form-button {
   align-self: flex-start;
   background-color: var(--nebrija-color);
   color: white;

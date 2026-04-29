@@ -6,6 +6,10 @@ export interface Proyect {
   title: string
   description: string
   imgUrl: string
+  autor: string
+  fecha: string
+  linea: string
+  centro: string
 }
 
 export const useProyectoStore = defineStore('proyecto', () => {

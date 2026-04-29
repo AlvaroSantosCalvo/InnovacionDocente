@@ -1,20 +1,92 @@
-[
+﻿[
   {
     "id": 1,
     "title": "Proyecto 1",
     "description": "Descripción del proyecto 1, Lorem ipsum dolor sit amet consectetur adipisicing elit. Prro voluptates dignissimos, provident nisi quiipsam aspernatur maiores earum doloribus",
-    "imgUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWJz/C4QSRIAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII="
+    "imgUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWJz/C4QSRIAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
+    "autor": "María García",
+    "fecha": "2024-03-15",
+    "linea": "Tecnologías Digitales",
+    "centro": "Berzosa"
   },
   {
     "id": 2,
     "title": "Proyecto 2",
     "description": "Descripción del proyecto 2, Lorem ipsum dolor sit amet consectetur adipisicing elit. Poro voluptates dignissimos, provident nisi quiipsam aspernatur maiores earum doloribus",
-    "imgUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAD1BMVEUA/wAA/0QA/xEA/yIA/zP2pZZtAAAA/0lEQVR4nO3QNwEAIBAAsaf414yHW1gSCZlpdnOa26wmljhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx8vXkAeAEiToEuY6lAAAAAElFTkSuQmCC"
+    "imgUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAD1BMVEUA/wAA/0QA/xEA/yIA/zP2pZZtAAAA/0lEQVR4nO3QNwEAIBAAsaf414yHW1gSCZlpdnOa26wmljhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx8vXkAeAEiToEuY6lAAAAAElFTkSuQmCC",
+    "autor": "Carlos Rodríguez",
+    "fecha": "2024-05-22",
+    "linea": "Metodologías Activas",
+    "centro": "Princesa"
   },
   {
     "id": 3,
     "title": "Proyecto 3",
     "description": "Descripción del proyecto 3, Lorem ipsum dolor sit amet consectetur adipisicing elit. Poro voluptates dignissimos, provident nisi quiipsam aspernatur maiores earum doloribus",
-    "imgUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURExMYHSggGBolGxMTITEhJSkrOi4uFx8zODM4NygtLisBCgoKDQ0NDg0NDzcZFRkrKy0tNzcrLS0rKysrKysrKy0tKystLSsrKysrKysrKysrLSsrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIDBv/EABcQAQEBAQAAAAAAAAAAAAAAAAABERL/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBwb/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/APKAPnXr4BoACgAgAAAiwUQIKAAAAIEABUFQRVAAAQAAAAAAAAEBYACoAAGgFAAAAAAAAoCBVEUAEEUECqIooqCRVEUABAAAABAGmQAKAglUQEqiKLQAKABQECqJqaJWhAWqIBVBAURQoICqCCqqEFUBkAAQRWnMQNAQRUA1NBqLrOmg1ozq6QUBASiVQJURRrV1lUFNZ1LSDXRrCrBuVYxG4mqoghVEUVBUFVUE1pQRBkTTW3JU0SgaaiKKIBVNQBdWMrAaioICFQAQUWKiAtQBBYihirKysFaVIrIKiiiKCoqKNYAIrmINuSoAIAIAAqKCxFFAKACVcKDIqCaAAAAAANRlYLjaxmLEFVBFUAVFRRrAAVzRoackFQERQAAAUBFDAIuGKgiVUUZFAIKAiKAgoCLEWBjRoIKpBFUAVFRRcRQFZqNIrmiNICIooAACgEWIqAKAiY0Cso1UEEUoIAoI0mAiwAWKRUBQRQEFwUBpFRQEUGIiKAiNCozgoCKAAKBBRFgAKiVpBGRrDFRnBrAogpgMqsBSAqCADUAUVFAUASiKCswAEgAJERpAQFVBQRrMBFFEUFABIACQBAiggRQAgigsABQAUFEEFEEFFoiKKgigCCjMAAgANAAAKVUAKAAAAAAgAEBRKqKAACAAAAAAAIAANIAAAAAIoACgIAAAAAgCiAKIAoAAAAAAAAAP/9k="
+    "imgUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURExMYHSggGBolGxMTITEhJSkrOi4uFx8zODM4NygtLisBCgoKDQ0NDg0NDzcZFRkrKy0tNzcrLS0rKysrKysrKy0tKystLSsrKysrKysrKysrLSsrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIDBv/EABcQAQEBAQAAAAAAAAAAAAAAAAABERL/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBwb/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/APKAPnXr4BoACgAgAAAiwUQIKAAAAIEABUFQRVAAAQAAAAAAAAEBYACoAAGgFAAAAAAAAoCBVEUAEEUECqIooqCRVEUABAAAABAGmQAKAglUQEqiKLQAKABQECqJqaJWhAWqIBVBAURQoICqCCqqEFUBkAAQRWnMQNAQRUA1NBqLrOmg1ozq6QUBASiVQJURRrV1lUFNZ1LSDXRrCrBuVYxG4mqoghVEUVBUFVUE1pQRBkTTW3JU0SgaaiKKIBVNQBdWMrAaioICFQAQUWKiAtQBBYihirKysFaVIrIKiiiKCoqKNYAIrmINuSoAIAIAAqKCxFFAKACVcKDIqCaAAAAAANRlYLjaxmLEFVBFUAVFRRrAAVzRoackFQERQAAAUBFDAIuGKgiVUUZFAIKAiKAgoCLEWBjRoIKpBFUAVFRRcRQFZqNIrmiNICIooAACgEWIqAKAiY0Cso1UEEUoIAoI0mAiwAWKRUBQRQEFwUBpFRQEUGIiKAiNCozgoCKAAKBBRFgAKiVpBGRrDFRnBrAogpgMqsBSAqCADUAUVFAUASiKCswAEgAJERpAQFVBQRrMBFFEUFABIACQBAiggRQAgigsABQAUFEEFEEFFoiKKgigCCjMAAgANAAAKVUAKAAAAAAgAEBRKqKAACAAAAAAAIAANIAAAAAIoACgIAAAAAgCiAKIAoAAAAAAAAAP/9k=",
+    "autor": "Ana López",
+    "fecha": "2024-07-10",
+    "linea": "Aprendizaje Colaborativo",
+    "centro": "Asura"
+  },
+  {
+    "id": 4,
+    "title": "Proyecto 4",
+    "description": "Diseño y desarrollo de una plataforma de aprendizaje colaborativo para docentes y estudiantes.",
+    "imgUrl": "",
+    "autor": "Javier Martín",
+    "fecha": "2024-09-05",
+    "linea": "Tecnologías Digitales",
+    "centro": "Berzosa"
+  },
+  {
+    "id": 5,
+    "title": "Proyecto 5",
+    "description": "Investigación sobre metodologías activas y su implementación en entornos educativos híbridos.",
+    "imgUrl": "",
+    "autor": "Laura Sánchez",
+    "fecha": "2024-11-18",
+    "linea": "Metodologías Activas",
+    "centro": "Princesa"
+  },
+  {
+    "id": 6,
+    "title": "Proyecto 6",
+    "description": "Desarrollo de una app para el seguimiento de actividades y resultados de innovación docente.",
+    "imgUrl": "",
+    "autor": "David Fernández",
+    "fecha": "2025-01-25",
+    "linea": "Aprendizaje Colaborativo",
+    "centro": "Asura"
+  },
+  {
+    "id": 7,
+    "title": "Proyecto 7",
+    "description": "Creación de un programa de mentorías para la formación y actualización docente.",
+    "imgUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWJz/C4QSRIAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
+    "autor": "Isabel Gómez",
+    "fecha": "2025-03-12",
+    "linea": "Tecnologías Digitales",
+    "centro": "Berzosa"
+  },
+  {
+    "id": 8,
+    "title": "Proyecto 8",
+    "description": "Integración de herramientas digitales para el diseño de proyectos educativos innovadores.",
+    "imgUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAD1BMVEUA/wAA/0QA/xEA/yIA/zP2pZZtAAAA/0lEQVR4nO3QNwEAIBAAsaf414yHW1gSCZlpdnOa26wmljhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx4sSJEydOnDhx8vXkAeAEiToEuY6lAAAAAElFTkSuQmCC",
+    "autor": "Miguel Ruiz",
+    "fecha": "2025-05-08",
+    "linea": "Metodologías Activas",
+    "centro": "Princesa"
+  },
+  {
+    "id": 9,
+    "title": "Proyecto 9",
+    "description": "Evaluación del impacto de actividades colaborativas en el aprendizaje de estudiantes.",
+    "imgUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURExMYHSggGBolGxMTITEhJSkrOi4uFx8zODM4NygtLisBCgoKDQ0NDg0NDzcZFRkrKy0tNzcrLS0rKysrKysrKy0tKystLSsrKysrKysrKysrLSsrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIDBv/EABcQAQEBAQAAAAAAAAAAAAAAAAABERL/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBwb/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/APKAPnXr4BoACgAgAAAiwUQIKAAAAIEABUFQRVAAAQAAAAAAAAEBYACoAAGgFAAAAAAAAoCBVEUAEEUECqIooqCRVEUABAAAABAGmQAKAglUQEqiKLQAKABQECqJqaJWhAWqIBVBAURQoICqCCqqEFUBkAAQRWnMQNAQRUA1NBqLrOmg1ozq6QUBASiVQJURRrV1lUFNZ1LSDXRrCrBuVYxG4mqoghVEUVBUFVUE1pQRBkTTW3JU0SgaaiKKIBVNQBdWMrAaioICFQAQUWKiAtQBBYihirKysFaVIrIKiiiKCoqKNYAIrmINuSoAIAIAAqKCxFFAKACVcKDIqCaAAAAAANRlYLjaxmLEFVBFUAVFRRrAAVzRoackFQERQAAAUBFDAIuGKgiVUUZFAIKAiKAgoCLEWBjRoIKpBFUAVFRRcRQFZqNIrmiNICIooAACgEWIqAKAiY0Cso1UEEUoIAoI0mAiwAWKRUBQRQEFwUBpFRQEUGIiKAiNCozgoCKAAKBBRFgAKiVpBGRrDFRnBrAogpgMqsBSAqCADUAUVFAUASiKCswAEgAJERpAQFVBQRrMBFFEUFABIACQBAiggRQAgigsABQAUFEEFEEFFoiKKgigCCjMAAgANAAAKVUAKAAAAAAgAEBRKqKAACAAAAAAAIAANIAAAAAIoACgIAAAAAgCiAKIAoAAAAAAAAAP/9k=",
+    "autor": "Elena Díaz",
+    "fecha": "2025-07-20",
+    "linea": "Aprendizaje Colaborativo",
+    "centro": "Asura"
   }
 ]
