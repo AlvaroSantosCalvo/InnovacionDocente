@@ -36,6 +36,7 @@ const events = ref(
     color: e.color,
     allDay: e.allDay,
     description: e.description,
+    place: e.place,
   })),
 )
 
@@ -102,39 +103,25 @@ function showEvent(nativeEvent: any, { event }: any) {
     <div class="d-flex align-center justify-center mb-12 position-relative">
       <!-- Selectores a la izquierda -->
       <div class="selectors-wrapper d-inline-flex rounded-pill border shadow-sm bg-grey-lighten-5">
-        <v-select
-          v-model="selectedMonth"
-          :items="months.map((m, i) => ({ title: m, value: i }))"
-          density="compact"
-          variant="plain"
-          hide-details
-          class="month-selector nav-text"
-          :menu-props="{ 
-            scrollStrategy: 'none', 
-            persistent: false, 
+        <v-select v-model="selectedMonth" :items="months.map((m, i) => ({ title: m, value: i }))" density="compact"
+          variant="plain" hide-details class="month-selector nav-text" :menu-props="{
+            scrollStrategy: 'none',
+            persistent: false,
             location: 'bottom start',
             offset: [0, 0],
             width: 160,
             contentClass: 'selector-menu-content'
-          }"
-        ></v-select>
+          }"></v-select>
         <v-divider vertical></v-divider>
-        <v-select
-          v-model="selectedYear"
-          :items="years"
-          density="compact"
-          variant="plain"
-          hide-details
-          class="year-selector nav-text"
-          :menu-props="{ 
-            scrollStrategy: 'none', 
-            persistent: false, 
+        <v-select v-model="selectedYear" :items="years" density="compact" variant="plain" hide-details
+          class="year-selector nav-text" :menu-props="{
+            scrollStrategy: 'none',
+            persistent: false,
             location: 'bottom start',
             offset: [0, 0],
             width: 110,
             contentClass: 'selector-menu-content'
-          }"
-        ></v-select>
+          }"></v-select>
       </div>
 
       <h2 class="text-h2 font-weight-black text-grey-darken-4">
@@ -143,56 +130,27 @@ function showEvent(nativeEvent: any, { event }: any) {
 
       <!-- Botones a la derecha -->
       <div class="nav-wrapper">
-        <div class="d-inline-flex rounded-pill border shadow-sm bg-grey-lighten-5 overflow-hidden" style="height: 48px;">
-          <v-btn
-            icon
-            variant="text"
-            height="100%"
-            rounded="0"
-            @click="prev"
-          >
+        <div class="d-inline-flex rounded-pill border shadow-sm bg-grey-lighten-5 overflow-hidden"
+          style="height: 48px;">
+          <v-btn icon variant="text" height="100%" rounded="0" @click="prev">
             <v-icon size="32" class="nav-icon">mdi-chevron-left</v-icon>
           </v-btn>
-          <v-btn
-            variant="text"
-            class="px-6 font-weight-bold nav-text"
-            height="100%"
-            rounded="0"
-            @click="value = new Date(); viewDate = new Date()"
-          >
+          <v-btn variant="text" class="px-6 font-weight-bold nav-text" height="100%" rounded="0"
+            @click="value = new Date(); viewDate = new Date()">
             Hoy
           </v-btn>
-          <v-btn
-            icon
-            variant="text"
-            height="100%"
-            rounded="0"
-            @click="next"
-          >
+          <v-btn icon variant="text" height="100%" rounded="0" @click="next">
             <v-icon size="32" class="nav-icon">mdi-chevron-right</v-icon>
           </v-btn>
         </div>
       </div>
     </div>
 
-    <v-calendar
-      v-model="value"
-      :start="calendarStart"
-      :events="events"
-      type="month"
-      @click:event="showEvent"
-    />
+    <v-calendar v-model="value" :start="calendarStart" :events="events" type="month" @click:event="showEvent" />
   </div>
 
-  <v-menu
-    v-model="menuOpen"
-    :activator="activator"
-    location="bottom center"
-    offset="10"
-    :close-on-content-click="false"
-    scroll-strategy="none"
-    :persistent="false"
-  >
+  <v-menu v-model="menuOpen" :activator="activator" location="bottom center" offset="10" :close-on-content-click="false"
+    scroll-strategy="none" :persistent="false">
     <v-card v-if="selectedEvent" min-width="350" class="elevation-24 rounded-xl overflow-hidden">
       <v-toolbar :color="selectedEvent.color" flat>
         <v-toolbar-title class="text-h5 font-weight-bold">
@@ -201,7 +159,7 @@ function showEvent(nativeEvent: any, { event }: any) {
         <v-spacer></v-spacer>
         <v-btn icon="mdi-close" variant="text" @click="menuOpen = false"></v-btn>
       </v-toolbar>
-      
+
       <v-card-text class="pa-6">
         <div class="d-flex align-center mb-6">
           <v-avatar :color="selectedEvent.color + '-lighten-4'" size="48" class="mr-4">
@@ -217,24 +175,26 @@ function showEvent(nativeEvent: any, { event }: any) {
             </div>
           </div>
         </div>
-        
+
         <v-divider class="mb-6"></v-divider>
-        
+
         <div class="text-overline font-weight-black text-grey-darken-1 mb-2">DESCRIPCIÓN</div>
         <p class="text-body-1 text-grey-darken-3 leading-relaxed">
           {{ selectedEvent.description }}
+        </p>
+
+        <v-divider class="mb-6"></v-divider>
+
+        <div class="text-overline font-weight-black text-grey-darken-1 mb-2">LUGAR</div>
+        <p class="text-body-1 text-grey-darken-3 leading-relaxed">
+          {{ selectedEvent.place }}
         </p>
       </v-card-text>
 
       <v-card-actions class="pa-4 bg-grey-lighten-4">
         <v-spacer></v-spacer>
-        <v-btn
-          :color="selectedEvent.color"
-          variant="elevated"
-          rounded="pill"
-          class="px-6 font-weight-bold"
-          @click="menuOpen = false"
-        >
+        <v-btn :color="selectedEvent.color" variant="elevated" rounded="pill" class="px-6 font-weight-bold"
+          @click="menuOpen = false">
           Entendido
         </v-btn>
       </v-card-actions>
@@ -247,7 +207,8 @@ function showEvent(nativeEvent: any, { event }: any) {
   position: absolute;
   left: 0;
   z-index: 100;
-  height: 48px; /* Altura fija para coincidir con los botones */
+  height: 48px;
+  /* Altura fija para coincidir con los botones */
   align-items: center;
 }
 
@@ -279,7 +240,7 @@ function showEvent(nativeEvent: any, { event }: any) {
 }
 
 :deep(.v-select .v-field__input) {
-  padding-left: 32px !important; 
+  padding-left: 32px !important;
 }
 
 .nav-wrapper {

@@ -1,34 +1,20 @@
 [
     {
-        "name": "Convocatoria proyectos I+D",
-        "start": "2026-04-05",
-        "end": "2026-04-05",
-        "color": "blue",
+        "name": "Nebrija Innova",
+        "start": "2026-06-12",
+        "end": "2026-06-12",
+        "color": "#c2002f",
         "allDay": true,
-        "description": "Apertura del plazo para la presentación de nuevos proyectos de Investigación y Desarrollo para el próximo semestre."
+        "description": "Nebrija Innova se enfoca como el evento de referencia anual dedicado a la reflexión, formación e investigación sobre innovación docente en la Universidad Nebrija, dotando de especial protagonismo a los docentes que han implantado o están implantado proyectos de innovación docente en nuestra institución. Este espacio pretende además ser un laboratorio de ideas sobre innovación docente, buscando fomentar la colaboración entre profesores y favoreciendo espacios de formación e investigación.",
+        "place": "Campus Lenguas y Educación en Madrid-Arturo Soria (calle de Asura, 90)."
     },
     {
-        "name": "Taller metodologías activas",
-        "start": "2026-04-10",
-        "end": "2026-04-10",
-        "color": "green",
+        "name": "Convocatoria de Proyectos de Innovación Docente",
+        "start": "2026-04-06",
+        "end": "2026-07-24",
+        "color": "grey",
         "allDay": true,
-        "description": "Sesión práctica sobre la implementación de metodologías activas en el aula (ABP, Flipped Classroom, etc.)."
-    },
-    {
-        "name": "Jornada innovación educativa",
-        "start": "2026-04-15",
-        "end": "2026-04-16",
-        "color": "orange",
-        "allDay": true,
-        "description": "Evento anual donde se comparten las mejores prácticas y proyectos de innovación docente del centro."
-    },
-    {
-        "name": "Plazo solicitud becas docentes",
-        "start": "2026-04-22",
-        "end": "2026-04-22",
-        "color": "red",
-        "allDay": true,
-        "description": "Último día para solicitar las becas de movilidad y formación para el personal docente."
+        "description": "La Convocatoria de Proyectos de Innovación Docente es un proceso anual que busca fomentar la creatividad y la mejora continua en la enseñanza. A través de esta convocatoria, se invita a los docentes a presentar propuestas innovadoras que puedan transformar la experiencia educativa. Los proyectos seleccionados recibirán apoyo y recursos para su implementación, con el objetivo de enriquecer el aprendizaje de los estudiantes y promover prácticas pedagógicas efectivas.",
+        "place": "Campus de Innovación Docente"
     }
 ]
