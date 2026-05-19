@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import ProjectCard from '@/components/ProjectCard.vue';
 import CalendarComponent from '@/components/CalendarComponent.vue';
+import SpeakerCard from '@/components/SpeakerCard.vue';
+import speakers from '@/data/speakers.json'
 </script>
 
 <template>
@@ -30,6 +32,9 @@ import CalendarComponent from '@/components/CalendarComponent.vue';
       <section class="events-section">
         <h3 class="sub-title">Eventos</h3>
         <div class="event-list"></div>
+        <div class="speakers-list">
+          <SpeakerCard v-for="(s, i) in speakers" :key="i" :speaker="s" />
+        </div>
         <button class="more-btn">Más eventos -></button>
       </section>
     </section>
