@@ -7,7 +7,7 @@ import CalendarComponent from '@/components/CalendarComponent.vue';
   <main>
     <div class="banner">
       <h1 class="page-title">Innovación Docente</h1>
-      <img src="../assets/banner.jpg" alt="fondo">
+      <img src="../assets/banner-home.jpg" alt="fondo">
     </div>
     <section class="presentation">
       <h2 class="title">Presentación</h2>

@@ -6,12 +6,12 @@ import { RouterLink, RouterView } from 'vue-router';
 <template>
   <header>
     <nav class="nav">
-      <img class="logo" src="/src/assets/logo.jpg" alt="logo">
+      <img class="logo" src="/src/assets/logo-nebrija-innova.png" alt="logo">
       <div class="nav-links">
         <RouterLink class="btn-nav" to="/">Inicio</RouterLink>
         <RouterLink class="btn-nav" to="/proyectos">Proyectos</RouterLink>
         <RouterLink class="btn-nav" to="/convocatorias">Convocatorias</RouterLink>
-        <RouterLink class="btn-nav" to="/eventos">Eventos</RouterLink>
+        <RouterLink class="btn-nav" to="/eventos">Nebrija Innova</RouterLink>
         <!-- <RouterLink class="btn-nav" to="/formacion">Formación</RouterLink>
         <RouterLink class="btn-nav" to="/buenas-practicas">Buenas Prácticas</RouterLink> -->
       </div>

@@ -25,7 +25,7 @@ const router = createRouter({
     {
       path: '/eventos',
       name: 'eventos',
-      component: () => import('../views/EventosView.vue'),
+      component: () => import('../views/NebrijaInnovaView.vue'),
     },
     {
       path: '/convocatorias',
