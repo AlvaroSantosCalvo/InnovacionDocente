@@ -1,7 +1,48 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import speakersData from '@/data/speakers.json';
 
 const activeTab = ref('inicio');
+const speakers = (speakersData as any) ?? []
+
+function resolveImage(img: string) {
+  if (!img) return ''
+  if (/^https?:\/\//.test(img) || img.startsWith('/')) return img
+  const filename = img.split('/').pop() || img
+  try { return new URL(`../assets/${filename}`, import.meta.url).href } catch { return img }
+}
+
+// Formulario de inscripción
+const form = ref({
+  name: '',
+  surname: '',
+  email: '',
+  affiliation: '',
+  role: 'asistente',
+  message: '',
+  accept: false,
+})
+const error = ref('')
+const success = ref(false)
+
+function handleRegistration() {
+  error.value = ''
+  success.value = false
+  if (!form.value.name || !form.value.surname || !form.value.email || !form.value.accept) {
+    error.value = 'Por favor, complete los campos obligatorios y acepte las condiciones.'
+    return
+  }
+  // Simulamos envío
+  success.value = true
+  // Opcional: limpiar formulario
+  form.value.name = ''
+  form.value.surname = ''
+  form.value.email = ''
+  form.value.affiliation = ''
+  form.value.role = 'asistente'
+  form.value.message = ''
+  form.value.accept = false
+}
 </script>
 
 <template>
@@ -128,15 +169,99 @@ const activeTab = ref('inicio');
 
     <!-- Contenido de Ponentes -->
     <section v-if="activeTab === 'ponentes'" class="content-section">
-      <div class="ponentes-placeholder">
-        <p>Sección de ponentes - Contenido próximamente</p>
+      <div class="main-containers speakers-layout">
+        <!-- Grid de ponentes (izquierda) -->
+        <div class="container left-container speakers-column">
+          <h2 class="section-heading">Ponentes</h2>
+          <div class="speakers-scroll">
+            <div class="speakers-grid">
+              <div v-for="(s, idx) in speakers" :key="idx" class="speaker-card-large">
+              <div class="speaker-header">
+                <img :src="resolveImage(s.image)" :alt="s.name" class="speaker-avatar" />
+                <h3 class="speaker-name">{{ s.name }}</h3>
+              </div>
+              <p class="speaker-bio">{{ s.bio }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha con compartir, botón e iframe (derecha) -->
+        <div class="container right-container right-sidebar">
+          <div class="social-share compact">
+            <h3 class="share-title">Comparte este evento</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon" title="X (Twitter)">
+                <img src="../assets/social-icons/x.png" alt="X">
+              </a>
+              <a href="#" class="social-icon" title="Facebook">
+                <img src="../assets/social-icons/facebook.png" alt="Facebook">
+              </a>
+              <a href="#" class="social-icon" title="LinkedIn">
+                <img src="../assets/social-icons/linkedin.png" alt="LinkedIn">
+              </a>
+              <a href="#" class="social-icon" title="Email">
+                <img src="../assets/social-icons/correo-electronico.png" alt="Email">
+              </a>
+            </div>
+          </div>
+
+          <button class="inscription-btn blue" @click="activeTab = 'inscripcion'">INSCRIBIRSE</button>
+
+          <div class="embed-box">
+            <label class="embed-label">Difunde tu evento poniendo el siguiente código en tu sitio</label>
+            <textarea readonly class="embed-textarea">&lt;iframe width="100%" height="300px" src="http://actos.nebrija.es/api/widget_map_event/eyJpZCI6IjE1MjciLCJpbnRlcm5hbCI6dHJ1ZX0="&gt;&lt;/iframe&gt;</textarea>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Contenido de Inscripción -->
     <section v-if="activeTab === 'inscripcion'" class="content-section">
-      <div class="inscripcion-placeholder">
-        <p>Página de inscripción - Contenido próximamente</p>
+      <div class="registration-layout">
+        <div class="registration-info">
+          <h2 class="title">Formulario de inscripción</h2>
+          <p>Rellena el siguiente formulario para inscribirte en la III Jornada Nebrija Innova. Recibirás un
+            correo de confirmación si tu inscripción es correcta.</p>
+          <ul>
+            <li><strong>Fecha:</strong> 12 de junio de 2026</li>
+            <li><strong>Horario:</strong> 8:30 - 14:30</li>
+            <li><strong>Lugar:</strong> Campus Lenguas y Educación - Arturo Soria</li>
+          </ul>
+        </div>
+
+        <div class="registration-form container">
+          <form @submit.prevent="handleRegistration">
+            <div class="two-cols">
+              <input class="form-input" v-model="form.name" type="text" placeholder="Nombre" required>
+              <input class="form-input" v-model="form.surname" type="text" placeholder="Apellidos" required>
+            </div>
+
+            <input class="form-input" v-model="form.email" type="email" placeholder="Correo electrónico" required>
+            <input class="form-input" v-model="form.affiliation" type="text" placeholder="Centro / Afiliación">
+
+            <label class="form-label">Tipo de participante</label>
+            <select v-model="form.role" class="form-input">
+              <option value="asistente">Asistente</option>
+              <option value="ponente">Ponente</option>
+              <option value="investigador">Investigador</option>
+            </select>
+
+            <textarea class="form-textarea" v-model="form.message" placeholder="Comentarios / Necesidades especiales"></textarea>
+
+            <label class="terms-label">
+              <input class="form-checkbox" type="checkbox" v-model="form.accept" required>
+              Acepto las condiciones y el tratamiento de datos
+            </label>
+
+            <div class="form-actions">
+              <button class="form-button" type="submit">Enviar inscripción</button>
+            </div>
+
+            <p v-if="error" class="form-error">{{ error }}</p>
+            <p v-if="success" class="form-success">Inscripción enviada correctamente. Revisaremos tu solicitud.</p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -299,6 +424,39 @@ main {
   color: #333;
 }
 
+/* Ponentes layout */
+.speakers-layout { width: 95%; max-width: calc(100% - 2rem); margin: 0 auto 3rem; }
+.section-heading { color: #c2002f; font-weight: 700; margin: 0 0 1rem 0; }
+
+.speakers-grid { display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); gap: 1rem; justify-content: stretch; align-items: start; }
+.speaker-card-large { background: white; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.06); border-radius: 4px; font-size: 0.95rem; width: 100%; max-width: 420px; height: 300px; display: flex; flex-direction: column; }
+.speaker-header { display: flex; align-items: center; gap: 0.75rem; }
+.speaker-avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.speaker-name { margin: 0; font-weight: 700; color: #111; font-size: 1rem; }
+.speaker-bio { margin-top: 0.75rem; color: #333; line-height: 1.6; text-align: justify; font-size: 0.95rem; overflow-y: auto; flex: 1 1 auto; padding-right: 6px; }
+
+/* Scrollbar inside each card */
+.speaker-bio::-webkit-scrollbar { width: 9px; }
+.speaker-bio::-webkit-scrollbar-track { background: transparent; }
+.speaker-bio::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.12); border-radius: 8px; }
+.speaker-bio { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.12) transparent; }
+
+.speakers-scroll { max-height: 420px; overflow-y: auto; overflow-x: hidden; padding-right: 0.5rem; }
+/* Scrollbar styles */
+.speakers-scroll::-webkit-scrollbar { width: 10px; }
+.speakers-scroll::-webkit-scrollbar-track { background: transparent; }
+.speakers-scroll::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.12); border-radius: 8px; }
+/* Firefox */
+.speakers-scroll { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.12) transparent; }
+
+.right-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
+.social-share.compact { padding: 1rem; background: transparent; }
+.inscription-btn.blue { background-color: #0b66d1; }
+.inscription-btn.blue:hover { background-color: #084f9b; }
+.embed-box { background: transparent; padding: 0.25rem; }
+.embed-label { display: block; color: #333; font-size: 0.95rem; margin-bottom: 0.5rem; }
+.embed-textarea { width: 100%; height: 90px; resize: none; border: 1px solid #ddd; padding: 0.5rem; border-radius: 4px; background: #f7f7f7; font-size: 0.8rem; color: #444; }
+
 /* Redes sociales */
 .social-share {
   background-color: #f8f9fa;
@@ -338,6 +496,60 @@ main {
   height: 100%;
   object-fit: contain;
   transition: filter 0.2s;
+}
+
+/* Mejoras visuales: tarjetas y formulario */
+.speaker-card-large {
+  border: 1px solid rgba(0,0,0,0.04);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.speaker-card-large:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+.speaker-name { font-size: 1.05rem; }
+.speaker-header { padding-bottom: 6px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+
+/* Inputs y botones estilizados */
+.form-input, .form-textarea, .embed-textarea, select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #e2e6ea;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: border-color .14s ease, box-shadow .14s ease, transform .12s ease;
+}
+.form-input:focus, .form-textarea:focus, select:focus { outline: none; border-color: #0b66d1; box-shadow: 0 6px 18px rgba(11,102,209,0.06); transform: translateY(-1px); }
+.form-textarea { min-height: 96px; resize: vertical; }
+.form-button {
+  background: linear-gradient(180deg,#0b66d1,#0951a8);
+  color: white;
+  padding: 0.75rem 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  box-shadow: 0 8px 20px rgba(11,102,209,0.12);
+}
+.form-button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(11,102,209,0.14); }
+
+.registration-form { padding: 1.5rem; }
+.registration-info p { color: #555; }
+.registration-info ul { padding-left: 1.1rem; color: #444; }
+
+.section-heading { font-size: 1.25rem; }
+
+/* Alinear la columna derecha para que el botón quede centrado horizontalmente */
+.right-sidebar { align-items: flex-end; }
+.right-sidebar .social-share { width: 100%; }
+.right-sidebar .embed-box { width: 100%; }
+
+/* Ajustes de tamaño en móviles */
+@media (max-width: 900px) {
+  .speakers-grid { grid-template-columns: 1fr; }
+  .speaker-card-large { height: auto; }
+  .right-sidebar { align-items: stretch; }
 }
 
 .social-icon:hover img {
@@ -493,6 +705,22 @@ main {
   font-size: 1.1rem;
 }
 
+/* Registration form styles */
+.registration-layout { display: grid; grid-template-columns: 1fr 420px; gap: 2rem; align-items: start; width: 95%; max-width: calc(100% - 2rem); margin: 0 auto 2rem; }
+.registration-info { padding: 1rem; }
+.registration-form { padding: 1.25rem; background: white; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.form-label { margin-bottom: 0.25rem; font-weight: 600; }
+.form-actions { margin-top: 0.5rem; }
+.form-error { color: #b00020; margin-top: 0.5rem; }
+.form-success { color: #0b662d; margin-top: 0.5rem; }
+.terms-label { display: flex; gap: 0.5rem; align-items: center; font-size: 0.95rem; color: #444; margin-top: 0.5rem; }
+
+@media (max-width: 900px) {
+  .registration-layout { grid-template-columns: 1fr; }
+  .registration-form { width: 100%; }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .tabs {
@@ -508,6 +736,11 @@ main {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .speakers-grid { grid-template-columns: 1fr; }
+  .speaker-avatar { width: 64px; height: 64px; }
+  .speakers-grid { grid-template-columns: 1fr; }
+  .speaker-card-large { width: 100%; height: auto; }
 
   .left-container,
   .right-container {
