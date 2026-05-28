@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import speakersData from '@/data/speakers.json';
+import { ref } from 'vue'
+import speakersData from '@/data/speakers.json'
 
-const activeTab = ref('inicio');
+const activeTab = ref('inicio')
 const speakers = (speakersData as any) ?? []
 
 function resolveImage(img: string) {
   if (!img) return ''
   if (/^https?:\/\//.test(img) || img.startsWith('/')) return img
   const filename = img.split('/').pop() || img
-  try { return new URL(`../assets/${filename}`, import.meta.url).href } catch { return img }
+  try {
+    return new URL(`../assets/${filename}`, import.meta.url).href
+  } catch {
+    return img
+  }
 }
 
 // Formulario de inscripción
@@ -49,7 +53,7 @@ function handleRegistration() {
   <main>
     <!-- Banner -->
     <div class="banner">
-      <img src="../assets/banner-innova.png" alt="Banner Nebrija Innova">
+      <img src="../assets/banner-innova.png" alt="Banner Nebrija Innova" />
     </div>
 
     <!-- Navegación de pestañas -->
@@ -58,10 +62,16 @@ function handleRegistration() {
         <button @click="activeTab = 'inicio'" :class="['tab', { active: activeTab === 'inicio' }]">
           Inicio
         </button>
-        <button @click="activeTab = 'ponentes'" :class="['tab', { active: activeTab === 'ponentes' }]">
+        <button
+          @click="activeTab = 'ponentes'"
+          :class="['tab', { active: activeTab === 'ponentes' }]"
+        >
           Ponentes
         </button>
-        <button @click="activeTab = 'inscripcion'" :class="['tab', { active: activeTab === 'inscripcion' }]">
+        <button
+          @click="activeTab = 'inscripcion'"
+          :class="['tab', { active: activeTab === 'inscripcion' }]"
+        >
           Inscripción
         </button>
       </div>
@@ -73,8 +83,10 @@ function handleRegistration() {
       <div class="main-containers">
         <!-- Contenedor izquierdo -->
         <div class="container left-container">
-          <h2 class="event-title">III Jornada Internacional de Investigación y Formación en Innovación Docente (Nebrija
-            Innova)</h2>
+          <h2 class="event-title">
+            III Jornada Internacional de Investigación y Formación en Innovación Docente (Nebrija
+            Innova)
+          </h2>
 
           <!-- Contenedor de detalles (rojo) -->
           <div class="event-details-box">
@@ -94,21 +106,27 @@ function handleRegistration() {
 
           <!-- Descripción del evento -->
           <div class="event-description">
-            <p>La III Jornada Internacional de Investigación y Formación en Innovación Docente (Nebrija Innova) se
-              enfoca como el evento de referencia anual dedicado a la reflexión, formación e investigación sobre
-              innovación docente en la Universidad Nebrija, dotando de especial protagonismo a los docentes que han
-              implantado o estén implantando proyectos de innovación docente en nuestra institución. Este espacio
-              potencia además ser un laboratorio de ideas sobre innovación docente, buscando fomentar la colaboración
-              entre profesores y favoreciendo espacios de formación e investigación.</p>
+            <p>
+              La III Jornada Internacional de Investigación y Formación en Innovación Docente
+              (Nebrija Innova) se enfoca como el evento de referencia anual dedicado a la reflexión,
+              formación e investigación sobre innovación docente en la Universidad Nebrija, dotando
+              de especial protagonismo a los docentes que han implantado o estén implantando
+              proyectos de innovación docente en nuestra institución. Este espacio potencia además
+              ser un laboratorio de ideas sobre innovación docente, buscando fomentar la
+              colaboración entre profesores y favoreciendo espacios de formación e investigación.
+            </p>
 
-            <p>La jornada se llevará a cabo el día 12 de junio de 8:30 a 14:30 en el Campus Lenguas y Educación en
-              Madrid Arturo Soria (calle Asura, 80). En ella se presentarán intervención los proyectos que han sido
-              aprobados en la convocatoria del curso 2025-2026, que esperamos sirvan de inspiración a toda la comunidad
-              docente para el impulso de nuevos proyectos. Este año contaremos con la participación de una ponente de
-              excepción, Marisell Reyes Millán, directora de Educación Digital en el Tecnológico de Monterrey,
-              conferenciista internacional en educación digital e innovación educativa y, con Carlos Magro, presidente
-              de la Asociación Educación Abierta y profesional independiente en innovación, la tecnología y las
-              políticas educativas.</p>
+            <p>
+              La jornada se llevará a cabo el día 12 de junio de 8:30 a 14:30 en el Campus Lenguas y
+              Educación en Madrid Arturo Soria (calle Asura, 80). En ella se presentarán
+              intervención los proyectos que han sido aprobados en la convocatoria del curso
+              2025-2026, que esperamos sirvan de inspiración a toda la comunidad docente para el
+              impulso de nuevos proyectos. Este año contaremos con la participación de una ponente
+              de excepción, Marisell Reyes Millán, directora de Educación Digital en el Tecnológico
+              de Monterrey, conferenciista internacional en educación digital e innovación educativa
+              y, con Carlos Magro, presidente de la Asociación Educación Abierta y profesional
+              independiente en innovación, la tecnología y las políticas educativas.
+            </p>
 
             <p>¡Esperamos contar con tu asistencia!</p>
 
@@ -123,16 +141,16 @@ function handleRegistration() {
             <h3 class="share-title">Comparte este evento</h3>
             <div class="social-icons">
               <a href="" class="social-icon" title="Facebook">
-                <img src="../assets/social-icons/facebook.png" alt="Facebook">
+                <img src="../assets/social-icons/facebook.png" alt="Facebook" />
               </a>
               <a href="" class="social-icon" title="X (Twitter)">
-                <img src="../assets/social-icons/x.png" alt="X">
+                <img src="../assets/social-icons/x.png" alt="X" />
               </a>
               <a href="" class="social-icon" title="LinkedIn">
-                <img src="../assets/social-icons/linkedin.png" alt="LinkedIn">
+                <img src="../assets/social-icons/linkedin.png" alt="LinkedIn" />
               </a>
               <a href="" class="social-icon" title="Email">
-                <img src="../assets/social-icons/correo-electronico.png" alt="Email">
+                <img src="../assets/social-icons/correo-electronico.png" alt="Email" />
               </a>
             </div>
           </div>
@@ -144,8 +162,13 @@ function handleRegistration() {
           <div class="map-container">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6249.582649163408!2d-3.655394136797625!3d40.45679759226153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422f3ee9d3ed13%3A0xf1c6d52a65a87b23!2sUniversidad%20Nebrija%20Campus%20de%20Lenguas%2C%20Educaci%C3%B3n%20y%20Psicolog%C3%ADa%20en%20Madrid%20Arturo%20Soria!5e0!3m2!1ses!2sus!4v1779181414585!5m2!1ses!2sus"
-              width="100%" height="500" style="border:0;" allowfullscreen="true" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+              width="100%"
+              height="500"
+              style="border: 0"
+              allowfullscreen="true"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -155,11 +178,17 @@ function handleRegistration() {
         <h2 class="title">Contacta con nosotros</h2>
         <form action="">
           <p>Envíanos un mensaje y nos pondremos en contacto contigo lo antes posible.</p>
-          <input class="form-input" type="text" placeholder="Nombre" required>
-          <input class="form-input" type="email" placeholder="Correo electrónico" required>
-          <textarea class="form-textarea" name="message" id="" placeholder="Tu mensaje..." required></textarea>
+          <input class="form-input" type="text" placeholder="Nombre" required />
+          <input class="form-input" type="email" placeholder="Correo electrónico" required />
+          <textarea
+            class="form-textarea"
+            name="message"
+            id=""
+            placeholder="Tu mensaje..."
+            required
+          ></textarea>
           <label for="terms">
-            <input class="form-checkbox" type="checkbox" id="terms" required>
+            <input class="form-checkbox" type="checkbox" id="terms" required />
             Acepto los términos y condiciones
           </label>
           <button class="form-button" type="submit">Enviar</button>
@@ -176,11 +205,11 @@ function handleRegistration() {
           <div class="speakers-scroll">
             <div class="speakers-grid">
               <div v-for="(s, idx) in speakers" :key="idx" class="speaker-card-large">
-              <div class="speaker-header">
-                <img :src="resolveImage(s.image)" :alt="s.name" class="speaker-avatar" />
-                <h3 class="speaker-name">{{ s.name }}</h3>
-              </div>
-              <p class="speaker-bio">{{ s.bio }}</p>
+                <div class="speaker-header">
+                  <img :src="resolveImage(s.image)" :alt="s.name" class="speaker-avatar" />
+                  <h3 class="speaker-name">{{ s.name }}</h3>
+                </div>
+                <p class="speaker-bio">{{ s.bio }}</p>
               </div>
             </div>
           </div>
@@ -192,25 +221,31 @@ function handleRegistration() {
             <h3 class="share-title">Comparte este evento</h3>
             <div class="social-icons">
               <a href="#" class="social-icon" title="X (Twitter)">
-                <img src="../assets/social-icons/x.png" alt="X">
+                <img src="../assets/social-icons/x.png" alt="X" />
               </a>
               <a href="#" class="social-icon" title="Facebook">
-                <img src="../assets/social-icons/facebook.png" alt="Facebook">
+                <img src="../assets/social-icons/facebook.png" alt="Facebook" />
               </a>
               <a href="#" class="social-icon" title="LinkedIn">
-                <img src="../assets/social-icons/linkedin.png" alt="LinkedIn">
+                <img src="../assets/social-icons/linkedin.png" alt="LinkedIn" />
               </a>
               <a href="#" class="social-icon" title="Email">
-                <img src="../assets/social-icons/correo-electronico.png" alt="Email">
+                <img src="../assets/social-icons/correo-electronico.png" alt="Email" />
               </a>
             </div>
           </div>
 
-          <button class="inscription-btn blue" @click="activeTab = 'inscripcion'">INSCRIBIRSE</button>
+          <button class="inscription-btn blue" @click="activeTab = 'inscripcion'">
+            INSCRIBIRSE
+          </button>
 
           <div class="embed-box">
-            <label class="embed-label">Difunde tu evento poniendo el siguiente código en tu sitio</label>
-            <textarea readonly class="embed-textarea">&lt;iframe width="100%" height="300px" src="http://actos.nebrija.es/api/widget_map_event/eyJpZCI6IjE1MjciLCJpbnRlcm5hbCI6dHJ1ZX0="&gt;&lt;/iframe&gt;</textarea>
+            <label class="embed-label"
+              >Difunde tu evento poniendo el siguiente código en tu sitio</label
+            >
+            <textarea readonly class="embed-textarea">
+&lt;iframe width="100%" height="300px" src="http://actos.nebrija.es/api/widget_map_event/eyJpZCI6IjE1MjciLCJpbnRlcm5hbCI6dHJ1ZX0="&gt;&lt;/iframe&gt;</textarea
+            >
           </div>
         </div>
       </div>
@@ -221,8 +256,10 @@ function handleRegistration() {
       <div class="registration-layout">
         <div class="registration-info">
           <h2 class="title">Formulario de inscripción</h2>
-          <p>Rellena el siguiente formulario para inscribirte en la III Jornada Nebrija Innova. Recibirás un
-            correo de confirmación si tu inscripción es correcta.</p>
+          <p>
+            Rellena el siguiente formulario para inscribirte en la III Jornada Nebrija Innova.
+            Recibirás un correo de confirmación si tu inscripción es correcta.
+          </p>
           <ul>
             <li><strong>Fecha:</strong> 12 de junio de 2026</li>
             <li><strong>Horario:</strong> 8:30 - 14:30</li>
@@ -233,12 +270,35 @@ function handleRegistration() {
         <div class="registration-form container">
           <form @submit.prevent="handleRegistration">
             <div class="two-cols">
-              <input class="form-input" v-model="form.name" type="text" placeholder="Nombre" required>
-              <input class="form-input" v-model="form.surname" type="text" placeholder="Apellidos" required>
+              <input
+                class="form-input"
+                v-model="form.name"
+                type="text"
+                placeholder="Nombre"
+                required
+              />
+              <input
+                class="form-input"
+                v-model="form.surname"
+                type="text"
+                placeholder="Apellidos"
+                required
+              />
             </div>
 
-            <input class="form-input" v-model="form.email" type="email" placeholder="Correo electrónico" required>
-            <input class="form-input" v-model="form.affiliation" type="text" placeholder="Centro / Afiliación">
+            <input
+              class="form-input"
+              v-model="form.email"
+              type="email"
+              placeholder="Correo electrónico"
+              required
+            />
+            <input
+              class="form-input"
+              v-model="form.affiliation"
+              type="text"
+              placeholder="Centro / Afiliación"
+            />
 
             <label class="form-label">Tipo de participante</label>
             <select v-model="form.role" class="form-input">
@@ -247,10 +307,14 @@ function handleRegistration() {
               <option value="investigador">Investigador</option>
             </select>
 
-            <textarea class="form-textarea" v-model="form.message" placeholder="Comentarios / Necesidades especiales"></textarea>
+            <textarea
+              class="form-textarea"
+              v-model="form.message"
+              placeholder="Comentarios / Necesidades especiales"
+            ></textarea>
 
             <label class="terms-label">
-              <input class="form-checkbox" type="checkbox" v-model="form.accept" required>
+              <input class="form-checkbox" type="checkbox" v-model="form.accept" required />
               Acepto las condiciones y el tratamiento de datos
             </label>
 
@@ -259,7 +323,9 @@ function handleRegistration() {
             </div>
 
             <p v-if="error" class="form-error">{{ error }}</p>
-            <p v-if="success" class="form-success">Inscripción enviada correctamente. Revisaremos tu solicitud.</p>
+            <p v-if="success" class="form-success">
+              Inscripción enviada correctamente. Revisaremos tu solicitud.
+            </p>
           </form>
         </div>
       </div>
@@ -425,37 +491,140 @@ main {
 }
 
 /* Ponentes layout */
-.speakers-layout { width: 95%; max-width: calc(100% - 2rem); margin: 0 auto 3rem; }
-.section-heading { color: #c2002f; font-weight: 700; margin: 0 0 1rem 0; }
+.speakers-layout {
+  width: 95%;
+  max-width: calc(100% - 2rem);
+  margin: 0 auto 3rem;
+}
+.section-heading {
+  color: #c2002f;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
 
-.speakers-grid { display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); gap: 1rem; justify-content: stretch; align-items: start; }
-.speaker-card-large { background: white; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.06); border-radius: 4px; font-size: 0.95rem; width: 100%; max-width: 420px; height: 300px; display: flex; flex-direction: column; }
-.speaker-header { display: flex; align-items: center; gap: 0.75rem; }
-.speaker-avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-.speaker-name { margin: 0; font-weight: 700; color: #111; font-size: 1rem; }
-.speaker-bio { margin-top: 0.75rem; color: #333; line-height: 1.6; text-align: justify; font-size: 0.95rem; overflow-y: auto; flex: 1 1 auto; padding-right: 6px; }
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 1rem;
+  justify-content: stretch;
+  align-items: start;
+}
+.speaker-card-large {
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 420px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.speaker-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.speaker-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.speaker-name {
+  margin: 0;
+  font-weight: 700;
+  color: #111;
+  font-size: 1rem;
+}
+.speaker-bio {
+  margin-top: 0.75rem;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 0.95rem;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  padding-right: 6px;
+}
 
 /* Scrollbar inside each card */
-.speaker-bio::-webkit-scrollbar { width: 9px; }
-.speaker-bio::-webkit-scrollbar-track { background: transparent; }
-.speaker-bio::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.12); border-radius: 8px; }
-.speaker-bio { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.12) transparent; }
+.speaker-bio::-webkit-scrollbar {
+  width: 9px;
+}
+.speaker-bio::-webkit-scrollbar-track {
+  background: transparent;
+}
+.speaker-bio::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+.speaker-bio {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.12) transparent;
+}
 
-.speakers-scroll { max-height: 420px; overflow-y: auto; overflow-x: hidden; padding-right: 0.5rem; }
+.speakers-scroll {
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+}
 /* Scrollbar styles */
-.speakers-scroll::-webkit-scrollbar { width: 10px; }
-.speakers-scroll::-webkit-scrollbar-track { background: transparent; }
-.speakers-scroll::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.12); border-radius: 8px; }
+.speakers-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+.speakers-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.speakers-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
 /* Firefox */
-.speakers-scroll { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.12) transparent; }
+.speakers-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.12) transparent;
+}
 
-.right-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
-.social-share.compact { padding: 1rem; background: transparent; }
-.inscription-btn.blue { background-color: #0b66d1; }
-.inscription-btn.blue:hover { background-color: #084f9b; }
-.embed-box { background: transparent; padding: 0.25rem; }
-.embed-label { display: block; color: #333; font-size: 0.95rem; margin-bottom: 0.5rem; }
-.embed-textarea { width: 100%; height: 90px; resize: none; border: 1px solid #ddd; padding: 0.5rem; border-radius: 4px; background: #f7f7f7; font-size: 0.8rem; color: #444; }
+.right-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.social-share.compact {
+  padding: 1rem;
+  background: transparent;
+}
+.inscription-btn.blue {
+  background-color: #0b66d1;
+}
+.inscription-btn.blue:hover {
+  background-color: #084f9b;
+}
+.embed-box {
+  background: transparent;
+  padding: 0.25rem;
+}
+.embed-label {
+  display: block;
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.embed-textarea {
+  width: 100%;
+  height: 90px;
+  resize: none;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background: #f7f7f7;
+  font-size: 0.8rem;
+  color: #444;
+}
 
 /* Redes sociales */
 .social-share {
@@ -486,7 +655,9 @@ main {
   background-color: transparent;
   border-radius: 0.5rem;
   text-decoration: none;
-  transition: transform 0.2s, filter 0.2s;
+  transition:
+    transform 0.2s,
+    filter 0.2s;
   cursor: pointer;
   overflow: hidden;
 }
@@ -500,29 +671,55 @@ main {
 
 /* Mejoras visuales: tarjetas y formulario */
 .speaker-card-large {
-  border: 1px solid rgba(0,0,0,0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
-.speaker-card-large:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
-.speaker-name { font-size: 1.05rem; }
-.speaker-header { padding-bottom: 6px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+.speaker-card-large:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+.speaker-name {
+  font-size: 1.05rem;
+}
+.speaker-header {
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
 
 /* Inputs y botones estilizados */
-.form-input, .form-textarea, .embed-textarea, select {
+.form-input,
+.form-textarea,
+.embed-textarea,
+select {
   width: 100%;
   padding: 0.7rem 0.9rem;
   border: 1px solid #e2e6ea;
   border-radius: 6px;
   background: #fff;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-  transition: border-color .14s ease, box-shadow .14s ease, transform .12s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition:
+    border-color 0.14s ease,
+    box-shadow 0.14s ease,
+    transform 0.12s ease;
 }
-.form-input:focus, .form-textarea:focus, select:focus { outline: none; border-color: #0b66d1; box-shadow: 0 6px 18px rgba(11,102,209,0.06); transform: translateY(-1px); }
-.form-textarea { min-height: 96px; resize: vertical; }
+.form-input:focus,
+.form-textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #0b66d1;
+  box-shadow: 0 6px 18px rgba(11, 102, 209, 0.06);
+  transform: translateY(-1px);
+}
+.form-textarea {
+  min-height: 96px;
+  resize: vertical;
+}
 .form-button {
-  background: linear-gradient(180deg,#0b66d1,#0951a8);
+  background: linear-gradient(180deg, #0b66d1, #0951a8);
   color: white;
   padding: 0.75rem 1.1rem;
   border-radius: 8px;
@@ -530,26 +727,50 @@ main {
   cursor: pointer;
   font-weight: 700;
   letter-spacing: 0.4px;
-  box-shadow: 0 8px 20px rgba(11,102,209,0.12);
+  box-shadow: 0 8px 20px rgba(11, 102, 209, 0.12);
 }
-.form-button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(11,102,209,0.14); }
+.form-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(11, 102, 209, 0.14);
+}
 
-.registration-form { padding: 1.5rem; }
-.registration-info p { color: #555; }
-.registration-info ul { padding-left: 1.1rem; color: #444; }
+.registration-form {
+  padding: 1.5rem;
+}
+.registration-info p {
+  color: #555;
+}
+.registration-info ul {
+  padding-left: 1.1rem;
+  color: #444;
+}
 
-.section-heading { font-size: 1.25rem; }
+.section-heading {
+  font-size: 1.25rem;
+}
 
 /* Alinear la columna derecha para que el botón quede centrado horizontalmente */
-.right-sidebar { align-items: flex-end; }
-.right-sidebar .social-share { width: 100%; }
-.right-sidebar .embed-box { width: 100%; }
+.right-sidebar {
+  align-items: flex-end;
+}
+.right-sidebar .social-share {
+  width: 100%;
+}
+.right-sidebar .embed-box {
+  width: 100%;
+}
 
 /* Ajustes de tamaño en móviles */
 @media (max-width: 900px) {
-  .speakers-grid { grid-template-columns: 1fr; }
-  .speaker-card-large { height: auto; }
-  .right-sidebar { align-items: stretch; }
+  .speakers-grid {
+    grid-template-columns: 1fr;
+  }
+  .speaker-card-large {
+    height: auto;
+  }
+  .right-sidebar {
+    align-items: stretch;
+  }
 }
 
 .social-icon:hover img {
@@ -647,7 +868,9 @@ main {
   background-color: white;
   cursor: pointer;
   position: relative;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
   flex-shrink: 0;
 }
 
@@ -706,19 +929,60 @@ main {
 }
 
 /* Registration form styles */
-.registration-layout { display: grid; grid-template-columns: 1fr 420px; gap: 2rem; align-items: start; width: 95%; max-width: calc(100% - 2rem); margin: 0 auto 2rem; }
-.registration-info { padding: 1rem; }
-.registration-form { padding: 1.25rem; background: white; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-.two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-.form-label { margin-bottom: 0.25rem; font-weight: 600; }
-.form-actions { margin-top: 0.5rem; }
-.form-error { color: #b00020; margin-top: 0.5rem; }
-.form-success { color: #0b662d; margin-top: 0.5rem; }
-.terms-label { display: flex; gap: 0.5rem; align-items: center; font-size: 0.95rem; color: #444; margin-top: 0.5rem; }
+.registration-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 2rem;
+  align-items: start;
+  width: 95%;
+  max-width: calc(100% - 2rem);
+  margin: 0 auto 2rem;
+}
+.registration-info {
+  padding: 1rem;
+}
+.registration-form {
+  padding: 1.25rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+.form-label {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+.form-actions {
+  margin-top: 0.5rem;
+}
+.form-error {
+  color: #b00020;
+  margin-top: 0.5rem;
+}
+.form-success {
+  color: #0b662d;
+  margin-top: 0.5rem;
+}
+.terms-label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 0.5rem;
+}
 
 @media (max-width: 900px) {
-  .registration-layout { grid-template-columns: 1fr; }
-  .registration-form { width: 100%; }
+  .registration-layout {
+    grid-template-columns: 1fr;
+  }
+  .registration-form {
+    width: 100%;
+  }
 }
 
 /* Responsive */
@@ -737,10 +1001,20 @@ main {
     gap: 1.5rem;
   }
 
-  .speakers-grid { grid-template-columns: 1fr; }
-  .speaker-avatar { width: 64px; height: 64px; }
-  .speakers-grid { grid-template-columns: 1fr; }
-  .speaker-card-large { width: 100%; height: auto; }
+  .speakers-grid {
+    grid-template-columns: 1fr;
+  }
+  .speaker-avatar {
+    width: 64px;
+    height: 64px;
+  }
+  .speakers-grid {
+    grid-template-columns: 1fr;
+  }
+  .speaker-card-large {
+    width: 100%;
+    height: auto;
+  }
 
   .left-container,
   .right-container {
