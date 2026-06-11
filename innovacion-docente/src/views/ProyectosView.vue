@@ -1,13 +1,10 @@
 <script setup lang="ts">
-
+import ProjectsList from '../components/ProjectsList.vue';
 </script>
 
 <template>
-  <main>
-    <h1>Proyectos</h1>
-  </main>
+  <ProjectsList />
 </template>
 
 <style scoped>
-
 </style>

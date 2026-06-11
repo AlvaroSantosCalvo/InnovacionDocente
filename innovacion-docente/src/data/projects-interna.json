@@ -1,0 +1,172 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Reflexion critica y autopercepcion juvenil",
+      "faculty": "Facultad de Comunicacion y Artes",
+      "responsible": "",
+      "summary": "Diagnostico participativo del estudiantado universitario ante el contexto actual.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Pedagogia critica",
+      "center": "Facultad de Comunicacion y Artes",
+      "documentFile": "PID10_Reflexión crítica y autopercepción juvenil_ diagnóstico participativo del estudiantado universitario ante el contexto actual.  1.pdf"
+    },
+    {
+      "id": 2,
+      "title": "El cuerpo en el arte",
+      "faculty": "Facultad de Educacion",
+      "responsible": "",
+      "summary": "Analisis de la expresion corporal a traves de la pintura en el Museo Thyssen.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Aprendizaje experiencial",
+      "center": "Campus Madrid",
+      "documentFile": "PID7_El cuerpo en el arte análisis de la expresión corporal a través de la pintura en el Museo Thyssen.pdf"
+    },
+    {
+      "id": 3,
+      "title": "Descansos activos en universitarios",
+      "faculty": "Facultad de Ciencias de la Salud",
+      "responsible": "Evelyn Martín Moraleda",
+      "summary": "Incorporacion de snacks de ejercicio saludable en el aula para combatir sedentarismo y fatiga cognitiva.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Salud y bienestar",
+      "center": "Facultad de Ciencias de la Salud",
+      "documentFile": "PID14_Descansos activos en universitarios como “snack” de ejercicio saludable en el aula.pdf"
+    },
+    {
+      "id": 4,
+      "title": "La opera como recurso pedagogico",
+      "faculty": "Facultad de Lenguas y Educacion",
+      "responsible": "",
+      "summary": "Uso de la opera como eje interdisciplinar para desarrollar metodologias activas y educacion en valores.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Aprendizaje experiencial",
+      "center": "Facultad de Lenguas y Educacion",
+      "documentFile": "PID11_Innovación educativa en el Grado en Educación Infantil_la ópera como recurso para el desarrollo de metodologías activas 1.pdf"
+    },
+    {
+      "id": 5,
+      "title": "WinSTEAM",
+      "faculty": "Escuela Politecnica Superior",
+      "responsible": "",
+      "summary": "Analisis de la autopercepcion para afrontar la brecha de genero en titulaciones STEAM mediante tutorizacion inclusiva.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Igualdad de genero",
+      "center": "Escuela Politecnica Superior",
+      "documentFile": "PID16_WinSTEAM Análisis de la autopercepción para afrontar la brecha de género en titulaciones STEAM a través de la tutorización docente inclusiva y per.pdf"
+    },
+    {
+      "id": 6,
+      "title": "FEEL-AI",
+      "faculty": "Facultad de Lenguas y Educacion",
+      "responsible": "Ocarina Masid Blanco",
+      "summary": "Integracion critica de la inteligencia artificial generativa en la formacion de profesores de lenguas extranjeras.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Inteligencia artificial",
+      "center": "Campus Online",
+      "documentFile": "PID15_FEEL-AI Feedback and Emotional Experience in Language Teacher Training Using Artificial Intelligence.pdf"
+    },
+    {
+      "id": 7,
+      "title": "Comunicar para aprender, aprender a comunicar",
+      "faculty": "Institutos de Competencias Profesionales",
+      "responsible": "",
+      "summary": "Proyecto de co-docencia e innovacion en competencias profesionales para mejorar la expresion escrita y oral.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Competencias transversales",
+      "center": "Institutos de Competencias Profesionales",
+      "documentFile": "PID23_Comunicar para aprender, aprender a comunicar proyecto de co-docencia e innovación en Competencias Profesionales I.pdf"
+    },
+    {
+      "id": 8,
+      "title": "CONEXIA",
+      "faculty": "Facultad de Economia y Empresa",
+      "responsible": "",
+      "summary": "Conectando aulas y empresas mediante retos de negocio reales y aprendizaje basado en el trabajo.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Empleabilidad",
+      "center": "Facultad de Economia y Empresa",
+      "documentFile": "PID18_CONEXIA Conectando Aulas y Empresas para la Enseñanza Universitaria del Futuro.pdf"
+    },
+    {
+      "id": 9,
+      "title": "Pedagogias Visibles",
+      "faculty": "Facultad de Comunicacion y Artes",
+      "responsible": "",
+      "summary": "Innovacion docente y aprendizaje situado en contextos profesionales del arte contemporaneo.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Arte y cultura",
+      "center": "Facultad de Comunicacion y Artes",
+      "documentFile": "PID19_Pedagogías Visibles Innovación docente, aprendizaje situado y transferencia artística en contextos profesionales del arte contemporáneo.pdf"
+    },
+    {
+      "id": 10,
+      "title": "Reenactment eco-corporeo",
+      "faculty": "Facultad de Artes",
+      "responsible": "",
+      "summary": "Narrativas performativas para consolidar identidades creativas desde la investigacion-creacion transdisciplinar.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Transdisciplinar",
+      "center": "Facultad de Artes",
+      "documentFile": "PID22_Reenactment eco-corpóreo narrativas performativas para consolidar identidades creativas.pdf"
+    },
+    {
+      "id": 11,
+      "title": "EduHackers",
+      "faculty": "Facultad de Lenguas y Educacion",
+      "responsible": "Cristina Villalonga Gomez",
+      "summary": "Aprendizaje basado en retos y gamificacion para desarrollar la competencia digital docente.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Digitalizacion",
+      "center": "Facultad de Lenguas y Educacion",
+      "documentFile": "PID1_EduHackers.pdf"
+    },
+    {
+      "id": 12,
+      "title": "EvaluaConectaC4",
+      "faculty": "Facultad de Comunicacion y Artes",
+      "responsible": "Antonella Catucci y Ana Rosa Rosado Parra",
+      "summary": "Sistema de evaluacion formativa basado en coevaluacion anonima entre iguales a traves del campus virtual.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Evaluacion",
+      "center": "Campus Online",
+      "documentFile": "PID3_EvalúaContectaC4.pdf"
+    },
+    {
+      "id": 13,
+      "title": "NebriForms",
+      "faculty": "Facultad de Letras y Educacion",
+      "responsible": "Angel Carlos Herrero Lastra",
+      "summary": "Plataforma de gestion de documentos academicos para TFG, TFM, actas y seguimiento de tutorias.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Transformacion digital",
+      "center": "Facultad de Letras y Educacion",
+      "documentFile": "PID8_NebriForms_plataforma de gestión de documentos académicos.pdf"
+    },
+    {
+      "id": 14,
+      "title": "Observamos un ramo de flores",
+      "faculty": "Facultad de Lenguas y Educacion",
+      "responsible": "Natalia Sancho Cubino",
+      "summary": "Aprendizaje transversal a traves de la observacion continuada de un ramo de flores en deterioro.",
+      "call": "INNOVA",
+      "academicYear": "2024/2025",
+      "line": "Aprendizaje transversal",
+      "center": "Facultad de Lenguas y Educacion",
+      "documentFile": "PID21_Observamos un ramo de flores aprendizaje transversal a través de la naturaleza 1.pdf"
+    }
+  ]
+}

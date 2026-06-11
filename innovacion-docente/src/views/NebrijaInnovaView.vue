@@ -1,9 +1,25 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import speakersData from '@/data/speakers.json'
 
 const activeTab = ref('inicio')
 const speakers = (speakersData as any) ?? []
+
+const route = useRoute()
+
+onMounted(() => {
+  const h = route.hash || ''
+  if (h) {
+    activeTab.value = h.replace('#', '')
+  } else if (route.query.tab) {
+    activeTab.value = String(route.query.tab)
+  }
+})
+
+watch(() => route.hash, (h) => {
+  if (h) activeTab.value = String(h).replace('#', '')
+})
 
 function resolveImage(img: string) {
   if (!img) return ''

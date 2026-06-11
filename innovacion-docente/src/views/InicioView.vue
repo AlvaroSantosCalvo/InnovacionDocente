@@ -31,7 +31,19 @@ import speakers from '@/data/speakers.json'
       </section>
       <section class="events-section">
         <h3 class="sub-title">Eventos</h3>
-        <div class="event-list"></div>
+        <div class="event-list">
+          <div class="event-card">
+            <div class="event-card-left">
+              <h4 class="event-card-title">III Jornada Internacional de Investigación y Formación en Innovación Docente</h4>
+              <div class="event-meta">12 de junio de 2026 · Campus Lenguas y Educación (Arturo Soria)</div>
+              <p class="event-excerpt">La III Jornada Nebrija Innova es el encuentro anual de referencia para la reflexión, formación e investigación en innovación docente. Presentación de proyectos, ponencias y espacios de colaboración.</p>
+              <router-link class="event-link" :to="{ path: '/eventos', hash: '#inicio' }">Ver detalle del evento</router-link>
+            </div>
+            <div class="event-card-right">
+              <img src="../assets/logo-nebrija-innova-bombilla.png" alt="Nebrija Innova" />
+            </div>
+          </div>
+        </div>
         <div class="speakers-list">
           <SpeakerCard v-for="(s, i) in speakers" :key="i" :speaker="s" />
         </div>
@@ -162,16 +174,25 @@ import speakers from '@/data/speakers.json'
 }
 
 .event-list {
-  /* Placeholder para lista de eventos */
-  height: 200px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
+  padding: 12px;
 }
+
+.event-card{
+  display:flex;
+  gap:12px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:12px;
+  align-items:center;
+}
+.event-card-left{flex:1}
+.event-card-title{margin:0;font-size:1.05rem;color:var(--nebrija-color,#c2002f)}
+.event-meta{font-size:0.9rem;color:#666;margin:8px 0}
+.event-excerpt{color:#555;margin:0 0 8px 0}
+.event-link{display:inline-block;background:var(--nebrija-color,#c2002f);color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none}
+
+.event-card-right img{width:140px;height:auto;border-radius:6px;object-fit:cover}
 
 /* Sección Contacto */
 .contact-form {
