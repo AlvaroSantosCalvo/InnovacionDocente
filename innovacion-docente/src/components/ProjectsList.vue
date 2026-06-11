@@ -184,7 +184,7 @@ onMounted(() => {
       <div class="dialog" role="dialog" aria-modal="true">
         <div class="dialog-header">
           <h2 class="dialog-title">{{ dialogProject?.title }}</h2>
-          <button class="dialog-close" @click="closeDialog">x</button>
+          <button class="dialog-close" aria-label="Cerrar" @click="closeDialog">×</button>
         </div>
         <div class="dialog-body">
           <div><strong>Facultad:</strong> {{ dialogProject?.faculty }}</div>
@@ -224,6 +224,8 @@ onMounted(() => {
 .more-wrap{display:flex;justify-content:center;margin:20px 0}
 .dialog-backdrop{position:fixed;inset:0;background:rgba(17,17,17,0.45);display:flex;align-items:center;justify-content:center;padding:18px;z-index:50}
 .dialog{width:min(520px,100%);background:#fff;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,0.28);border:1px solid #d8d2cb;overflow:hidden}
-.dialog-header{background:var(--title);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+.dialog-header{background:#000;color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+.dialog-title{margin:0;font-size:16px;font-weight:700}
+.dialog-close{background:transparent;color:#fff;border:0;font-size:18px;line-height:1;cursor:pointer;padding:6px 10px;border-radius:4px}
 .dialog-body{padding:16px;color:#2b2b2b;line-height:1.6;display:grid;gap:10px}
 </style>
